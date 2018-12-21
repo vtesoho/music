@@ -1,10 +1,10 @@
-import {commonParams, options} from './config'
+import {commonParams, options, server_url} from './config'
 import axios from 'axios'
 
 const debug = process.env.NODE_ENV !== 'production'
 
 export function getTopList () {
-  const url = debug ? '/api/getTopList' : 'http://ustbhuangyi.com/music/api/getTopList'
+  const url = debug ? '/api/getTopList' : server_url + 'api/getTopList'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,
@@ -19,7 +19,7 @@ export function getTopList () {
 }
 
 export function getMusicList (topid) {
-  const url = debug ? '/api/getMusicList' : 'http://ustbhuangyi.com/music/api/getMusicList'
+  const url = debug ? '/api/getMusicList' : server_url + 'api/getMusicList'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     needNewCode: 1,

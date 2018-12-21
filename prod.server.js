@@ -9,7 +9,7 @@ var app = express()
 
 var apiRoutes = express.Router()
 
-apiRoutes.get('/api/getRecommend', function (req, res) {
+apiRoutes.get('/getRecommend', function (req, res) {
   var url = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
   axios.get(url, {
     headers: {
@@ -25,7 +25,7 @@ apiRoutes.get('/api/getRecommend', function (req, res) {
   })
 })
 
-apiRoutes.get('/api/getCdInfo', (req,res) => {
+apiRoutes.get('/getCdInfo', (req,res) => {
   var url = 'https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg'
   axios.get(url, {
     headers: {
@@ -48,7 +48,7 @@ apiRoutes.get('/api/getCdInfo', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getDisclist', (req,res) => {
+apiRoutes.get('/getDisclist', (req,res) => {
   var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
   axios.get(url, {
     headers: {
@@ -64,7 +64,7 @@ apiRoutes.get('/api/getDisclist', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getSingerlist', (req,res) => {
+apiRoutes.get('/getSingerlist', (req,res) => {
   var url = 'https://c.y.qq.com/v8/fcg-bin/v8.fcg'
   axios.get(url, {
     headers: {
@@ -80,7 +80,7 @@ apiRoutes.get('/api/getSingerlist', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getSingerDetail', (req,res) => {
+apiRoutes.get('/getSingerDetail', (req,res) => {
   var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg'
   axios.get(url, {
     headers: {
@@ -96,7 +96,7 @@ apiRoutes.get('/api/getSingerDetail', (req,res) => {
   })
 })
 
-app.post('/api/getPurlUrl', bodyParser.json(), function (req, res) {
+apiRoutes.post('/getPurlUrl', bodyParser.json(), function (req, res) {
   const url = 'https://u.y.qq.com/cgi-bin/musicu.fcg'
   axios.post(url, req.body, {
     headers: {
@@ -111,7 +111,7 @@ app.post('/api/getPurlUrl', bodyParser.json(), function (req, res) {
   })
 })
 
-apiRoutes.get('/api/lyric', (req,res) => {
+apiRoutes.get('/lyric', (req,res) => {
   var url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric.fcg'
   axios.get(url, {
     headers: {
@@ -134,7 +134,7 @@ apiRoutes.get('/api/lyric', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getTopList', (req,res) => {
+apiRoutes.get('/getTopList', (req,res) => {
   var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg'
   axios.get(url, {
     headers: {
@@ -160,7 +160,7 @@ apiRoutes.get('/api/getTopList', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getMusicList', (req,res) => {
+apiRoutes.get('/getMusicList', (req,res) => {
   var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg'
   axios.get(url, {
     headers: {
@@ -186,7 +186,7 @@ apiRoutes.get('/api/getMusicList', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/getHotKey', (req,res) => {
+apiRoutes.get('/getHotKey', (req,res) => {
   var url = 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg'
   axios.get(url, {
     headers: {
@@ -202,7 +202,7 @@ apiRoutes.get('/api/getHotKey', (req,res) => {
   })
 })
 
-apiRoutes.get('/api/search', (req,res) => {
+apiRoutes.get('/search', (req,res) => {
   var url = 'https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp'
   axios.get(url, {
     headers: {

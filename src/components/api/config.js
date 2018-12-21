@@ -12,3 +12,5 @@ export const options = {
 }
 
 export const ERR_OK = 0
+
+export const server_url = 'https://www.lanrenkeji.win/music/'

@@ -1,4 +1,4 @@
-import {commonParams, options} from './config'
+import {commonParams, options, server_url} from './config'
 import axios from 'axios'
 import {getUid} from 'common/js/uid'
 import {ERR_OK} from 'components/api/config'
@@ -7,7 +7,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 
 export function getSingerlist() {
-  const url = debug ? 'api/getSingerlist' : 'https//vtesoho.github.io/music/api/getSingerlist'
+  const url = debug ? 'api/getSingerlist' : server_url + 'api/getSingerlist'
   const data = Object.assign({}, commonParams, {
     channel: 'singer',
     page: 'list',
@@ -29,7 +29,7 @@ export function getSingerlist() {
 
 
 export function getSingerDetail(singerid) {
-  const url = debug ? 'api/getSingerDetail' : 'https//vtesoho.github.io/music/api/getSingerDetail'
+  const url = debug ? 'api/getSingerDetail' : server_url + 'api/getSingerDetail'
   const data = Object.assign({}, commonParams, {
     hostUin:0,
     needNewCode:0,
@@ -50,7 +50,7 @@ export function getSingerDetail(singerid) {
 
 
 export function getSongsUrl(songs) {
-  const url = debug ? '/api/getPurlUrl' : 'http://ustbhuangyi.com/music/api/getPurlUrl'
+  const url = debug ? '/api/getPurlUrl' : server_url + 'api/getPurlUrl'
 
   let mids = []
   let types = []

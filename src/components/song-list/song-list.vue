@@ -1,13 +1,16 @@
 <template>
   <div class="song-list">
     <ul>
-      <li v-for="(song,index) in songs" class="item" @click="selectItem(song,index)">
+      <li v-for="(song,index) in songs" class="item" @click.stop="selectItem(song,index)">
         <div class="rank" v-show="rank">
           <span :class="getRankCls(index)">{{getRankText(index)}}</span>
         </div>
         <div class="content">
           <h2 class="name">{{song.name}}</h2>
-          <p class="desc">{{getDesc(song)}}</p>
+          <p class="desc">{{getDesc(song)}}
+            <span class="down" @click.stop="downItem(song)">下载</span>
+          </p>
+          
         </div>
       </li>
     </ul>
@@ -27,7 +30,18 @@
       }
       //传入参数
     },
+    created() {
+      // console.log(this.songs)
+    },
     methods:{
+      downItem(song) {
+        console.log(song)
+        const link = document.createElement('a');
+        link.href = song.url;
+        link.download = song.name;
+        link.click();
+        // this.download(song.url,song.name)
+      },
       getRankCls(index){
         if (index <= 2) {
           return `icon icon${index}`
@@ -92,4 +106,6 @@
           no-wrap()
           margin-top: 4px
           color: $color-text-d
+        .down
+          float:right
 </style>

@@ -10,8 +10,14 @@ import {
 import App from './App'
 import router from './router'
 import store from './store'
-import 'common/stylus/index.styl'
 import VueLazyload from 'vue-lazyload'
+
+import 'common/stylus/index.styl'
+
+
+require('./assets/vconsole.js')
+
+
 
 Vue.use(IndexList)
 Vue.use(Slide)
@@ -19,6 +25,7 @@ Vue.use(Scroll)
 Vue.use(VueLazyload)
 Vue.config.productionTip = false
 
+console.log("s")
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

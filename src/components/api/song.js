@@ -1,10 +1,11 @@
-import {commonParams} from './config'
+import {commonParams, server_url} from './config'
 import axios from 'axios'
 import {ERR_OK} from 'components/api/config'
-
+const debug = process.env.NODE_ENV !== 'production'
 
 export function getLyric(mid) {
-  const url = '/api/lyric'
+  const url = debug ? '/api/lyric' : server_url + 'api/lyric'
+  // const url = '/api/lyric'
   const data = Object.assign({}, commonParams, {
     songmid: mid,
     pachetime: +new Date(),

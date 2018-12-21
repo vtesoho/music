@@ -14,7 +14,11 @@
             <i :class="getIconCls(item)"></i>
           </div>
           <div class="name">
-            <p class="text" v-html="getDisplayName(item)"></p>
+            <span class="down" @click.stop="downItem(item)">下载</span>
+            <p class="text" v-html="getDisplayName(item)">
+              
+            </p>
+
           </div>
         </li>
       </ul>
@@ -60,6 +64,13 @@
       }
     },
     methods: {
+      downItem(item) {
+        console.log(item)
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.download = item.name;
+        link.click();
+      },
       scrollStartTest() {
         
       },
@@ -206,6 +217,8 @@
         overflow: hidden
         .text
           no-wrap()
+        .down
+          float:right
     .no-result-wrapper
       position: absolute
       top: 50%

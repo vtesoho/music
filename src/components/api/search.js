@@ -1,9 +1,9 @@
-import {commonParams, options} from './config'
+import {commonParams, options, server_url} from './config'
 import axios from 'axios'
 const debug = process.env.NODE_ENV !== 'production'
 
 export function getHotKey () {
-  const url = debug ? '/api/getHotKey' : 'http://ustbhuangyi.com/music/api/getHotKey'
+  const url = debug ? '/api/getHotKey' : server_url + 'api/getHotKey'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     needNewCode: 1
@@ -20,7 +20,7 @@ export function getHotKey () {
 
 
 export function search(query, page, zhida, perpage) {
-  const url = debug ? '/api/search' : 'http://ustbhuangyi.com/music/api/search'
+  const url = debug ? '/api/search' : server_url + 'api/search'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     needNewCode: 1,
