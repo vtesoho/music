@@ -1,9 +1,8 @@
 ## vue 练手项目
 
-技术语言 HTML、Stylus、ES6 
-框架 Vue.js 2.x 
-框架 Vue Router 2.x 
-框架 Vuex 2.x 开发系统 不限（mac、windows、linux 都可以） 环境配置 node 6+ npm 4+
+项目体验地址
+
+[link](https://www.lanrenkeji.win/music)
 
 技术栈
 ```
@@ -22,7 +21,7 @@ UI框架 ：       cube-ui
 
 API接口全部是QQ音乐抓取真实地址，跨域问题采用nginx服务器转发方式解决。
 
-运行环境必须运行prod.server.js文件
+生产环境必须运行prod.server.js文件
 
 ```
 node prod.server.js
