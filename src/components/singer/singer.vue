@@ -1,5 +1,10 @@
 <template>
-  <div class="singer" ref="singer">
+  <!-- 
+  <div @touchmove.prevent="singeratouchMove">
+
+    <div style="width:100px;float:left;" @touchmove.prevent="singerltouchMove">sss</div>
+    <div style="width:100px;float:right;" @touchmove.prevent="singerrtouchMove">sss</div> -->
+  <div class="singer" ref="singer" @touchmove.prevent="singertouchMove">
     <cube-index-list :data="singerlist" ref="list">
       <cube-index-list-group v-for="(group, index) in singerlist" :key="index" :group="group" class="list-group">
         <cube-index-list-item v-for="(item, index) in group.items" :key="index" :item="item" 
@@ -31,6 +36,15 @@ export default {
     this._getSingerlist()
   },
   methods: {
+    singerltouchMove(e) {
+      console.log("left")
+    },
+    singerrtouchMove(e) {
+      console.log("right")
+    },
+    singeratouchMove(e) {
+      console.log('a')
+    },
     handlePlaylist(playlist) {
       // console.log(playlist)
       const bottom = this.playlist.length > 0 ? '60px' : ''
