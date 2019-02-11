@@ -1,30 +1,30 @@
-# projectname
+## vue 练手项目
 
-> A Vue.js project
+技术语言 HTML、Stylus、ES6 
+框架 Vue.js 2.x 
+框架 Vue Router 2.x 
+框架 Vuex 2.x 开发系统 不限（mac、windows、linux 都可以） 环境配置 node 6+ npm 4+
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+技术栈
+```
+mvvm框架：      Vue.js （版本2.x）
+状态管理：       Vuex
+前端路由：       Vue Router
+UI框架 ：       cube-ui
+样式预处理：     stylus
+服务端通讯：     axios
+移动端滚动库：   better-scroll
+构建工具：       webpack 2.0
+源码：          es6
+环境配置:       node 8+ npm 5+
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+API接口全部是QQ音乐抓取真实地址，跨域问题采用nginx服务器转发方式解决。
+
+运行环境必须运行prod.server.js文件
+
+```
+node prod.server.js
+```
+
