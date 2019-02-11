@@ -2,7 +2,7 @@
 
 项目体验地址
 
-[link](https://www.lanrenkeji.win/music)
+[https://www.lanrenkeji.win/music](https://www.lanrenkeji.win/music)
 
 技术栈
 ```
